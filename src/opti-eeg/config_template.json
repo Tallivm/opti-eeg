@@ -1,0 +1,42 @@
+{
+    "project_name": "my-opti-eeg-project",
+    "path": {
+        "checkpoint_path": "checkpoints",
+        "data_path": "",
+        "labels_path": "",
+        "test_data_path": "",
+        "test_labels_path": "",
+        "fixed_config_path": "fixed_config_path.json"
+    },
+    "opt": {
+        "wandb_user_key": "",
+        "wandb_number_of_failures": 1,
+        "optuna_n_trials": 1000,
+        "create_new_db": false
+    },   
+    "data": {
+        "sample_rate": 200,
+        "n_classes": 6,
+        "class_names": ["no dream", "very unhappy", "unhappy", "calm", "happy", "very happy"],
+        "n_channels": 6,
+        "channel_names": ["F3", "F4", "FT7", "FT8", "T7", "T8"],
+        "omit_channels": [],
+        "start_sample": 0,
+        "end_sample": -1,
+        "highpass": null,
+        "lowpass": null
+    },
+    "train": {
+        "max_n_epochs": 150,
+        "n_cv": 5,
+        "loss_func_name": "CrossEntropyLoss",
+        "eval_metric_name": "macro-f1",
+        "eval_increases": true,
+        "patience": 20,
+        "min_delta": 0.001,
+        "overfit_thresh": 0.25,
+        "overfit_epoch": 10,
+        "data_seed": 42,
+        "model_seed": 42
+    }
+}

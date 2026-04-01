@@ -1,0 +1,29 @@
+# ignore python additional files
+*.pyc
+*__pycache__
+.idea*
+.vscode*
+# ignore model checkpoints
+/src/opti-eeg/checkpoints/*
+*.ckpt
+# ignore optuna databases
+*.db
+# ignore log and wandb files
+/src/opti-eeg/logs*
+/src/opti-eeg/wandb*
+*.log
+*.wandb
+# ignore data files
+/src/opti-eeg/data/*
+*.npy
+# ignore any additional json files except for example ones
+*.json
+!src/opti-eeg/config_template.json
+!src/opti-eeg/fixed_config_path.json
+!tests/fixed_params_eegnet.json
+# ignore any txt files except for requirements
+*.txt
+!src/opti-eeg/requirements.txt
+# ignore gradcam results
+/src/opti-eeg/gradcam/*
+*.pdf
