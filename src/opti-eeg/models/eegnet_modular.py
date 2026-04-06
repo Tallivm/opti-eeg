@@ -133,7 +133,7 @@ class EEGNet_Modular(nn.Module):
     def build_eegnet_proto(self) -> None:
         self._build_model_base()
         self._extend_with_separable_conv()
-        self.layers.append(nn.Flatten())
+        self.layers.update(nn.Flatten())
         self.register_buffer('prototypes', torch_zeros(self.n_classes, self.F2 * self.final_dim_size))
         self.forward = self.proto_forward
 
